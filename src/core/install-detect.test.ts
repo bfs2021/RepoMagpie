@@ -57,6 +57,8 @@ const CASES: [string, string[]][] = [
   ["uv add --reinstall-package foo requests", ["pypi:requests"]],
   ["uv add --no-binary-package foo requests", ["pypi:requests"]],
   ["uv add --no-build-package foo requests", ["pypi:requests"]],
+  ["uv add --no-binary requests", ["pypi:requests"]], // a boolean switch in uv add, unlike uv pip install
+  ["uv add --no-binary requests flask", ["pypi:requests", "pypi:flask"]],
   ["uv pip install --index-strategy first-index requests", ["pypi:requests"]],
   ["uv pip install --resolution lowest-direct requests", ["pypi:requests"]],
   ["uv pip install --prerelease allow requests", ["pypi:requests"]],
